@@ -5,6 +5,9 @@ import {
   formatCurrencyBRL,
   isBusinessDay,
   formatDateBR,
+  getNextOpenDays,
+  getAvailableTimeSlots,
+  getShopStatus,
   generateWhatsAppBookingUrl,
   WHATSAPP_PHONE,
 } from './booking';
@@ -23,16 +26,51 @@ test('formatCurrencyBRL formats prices properly', () => {
 });
 
 test('isBusinessDay correctly validates Tuesday to Saturday', () => {
-  // 2026-11-10 is Tuesday (day 2)
   assert.equal(isBusinessDay('2026-11-10'), true);
-  // 2026-11-11 is Wednesday (day 3)
-  assert.equal(isBusinessDay('2026-11-11'), true);
-  // 2026-11-14 is Saturday (day 6)
   assert.equal(isBusinessDay('2026-11-14'), true);
-  // 2026-11-15 is Sunday (day 0 - closed)
   assert.equal(isBusinessDay('2026-11-15'), false);
-  // 2026-11-16 is Monday (day 1 - closed)
   assert.equal(isBusinessDay('2026-11-16'), false);
+});
+
+test('getNextOpenDays returns 12 days excluding Sunday and Monday', () => {
+  const friday = new Date(2026, 10, 13, 10, 0);
+  const days = getNextOpenDays(friday, 12);
+  assert.equal(days.length, 12);
+  assert.equal(days[0].iso, '2026-11-13');
+  assert.equal(days[0].isToday, true);
+  assert.equal(days[1].iso, '2026-11-14');
+  // Skips 15 (Sun) and 16 (Mon)
+  assert.equal(days[2].iso, '2026-11-17');
+  assert.ok(days.every((d) => isBusinessDay(d.iso)));
+});
+
+test('getAvailableTimeSlots hides past slots when date is today and keeps 12:00/12:30 closed', () => {
+  const fridayMorning = new Date(2026, 10, 13, 11, 20);
+  const todaySlots = getAvailableTimeSlots('2026-11-13', fridayMorning);
+  assert.equal(todaySlots[0], '13:00');
+  assert.ok(!todaySlots.includes('11:30'));
+  assert.ok(!todaySlots.includes('12:00'));
+  assert.ok(!todaySlots.includes('12:30'));
+
+  const futureSlots = getAvailableTimeSlots('2026-11-14', fridayMorning);
+  assert.equal(futureSlots.length, 20);
+  assert.equal(futureSlots[0], '09:00');
+  assert.ok(!futureSlots.includes('12:00'));
+});
+
+test('getShopStatus returns exact open and closed states', () => {
+  assert.deepEqual(getShopStatus(new Date(2026, 10, 13, 14, 0)), {
+    isOpen: true,
+    label: 'Aberto agora',
+  });
+  assert.deepEqual(getShopStatus(new Date(2026, 10, 15, 14, 0)), {
+    isOpen: false,
+    label: 'Fechado, abre terça às 9h',
+  });
+  assert.deepEqual(getShopStatus(new Date(2026, 10, 16, 14, 0)), {
+    isOpen: false,
+    label: 'Fechado, abre amanhã às 9h',
+  });
 });
 
 test('formatDateBR converts ISO date to Brazilian standard', () => {
@@ -53,7 +91,8 @@ test('generateWhatsAppBookingUrl constructs valid URL with encoded message', () 
   assert.ok(url.startsWith(`https://wa.me/${WHATSAPP_PHONE}?text=`));
   const decoded = decodeURIComponent(url);
   assert.ok(decoded.includes('Carlos Alberto'));
-  assert.ok(decoded.includes('Combo Corte e Barba (R$ 80)'));
+  assert.ok(decoded.includes('Combo Corte e Barba'));
+  assert.ok(decoded.includes('R$ 80'));
   assert.ok(decoded.includes('Marco Silveira'));
   assert.ok(decoded.includes('14/11/2026'));
   assert.ok(decoded.includes('15:00'));

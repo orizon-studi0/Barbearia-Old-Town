@@ -12,19 +12,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Barbearia Old Town | Cortes Tradicionais e Barba no Tatuapé" />
   <meta property="og:description" content="Corte na tesoura, barba na toalha quente e chopp gelado por nossa conta. Rua Tuiuti, 55, Tatuapé." />
-  <meta property="og:image" content="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/recepcao-deqQwKVq.jpg" />
+  <meta property="og:image" content="images/recepcao.jpg" />
   <meta property="og:locale" content="pt_BR" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Barbearia Old Town | Cortes Tradicionais e Barba no Tatuapé" />
   <meta name="twitter:description" content="Barbearia tradicional no Tatuapé, a 400 m do metrô. Terça a sábado, 9h às 20h." />
-  <meta name="twitter:image" content="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/recepcao-deqQwKVq.jpg" />
+  <meta name="twitter:image" content="images/recepcao.jpg" />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='2' fill='%2315171A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='%23B8693D' text-anchor='middle'%3EOT%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='2' fill='%2315171A'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='800' fill='%23B8693D' text-anchor='middle'%3EOT%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 
@@ -33,8 +33,8 @@
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Barbearia Old Town",
-    "description": "Barbearia tradicional no Tatuapé, a 400 m da estação Tatuapé do Metrô. Cortes clássicos, barba com toalha quente e chopp cortesia.",
-    "image": "https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/recepcao-deqQwKVq.jpg",
+    "description": "Barbearia tradicional na Rua Tuiuti, 55, Tatuapé, a 400 m da estação Tatuapé do Metrô. Cortes clássicos, barba com toalha quente e chopp cortesia.",
+    "image": "images/recepcao.jpg",
     "telephone": "+55-11-99999-8888",
     "priceRange": "$$",
     "address": {
@@ -63,13 +63,13 @@
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Cardápio de Serviços",
+      "name": "Serviços da Barbearia Old Town",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corte Tradicional" }, "price": "50.00", "priceCurrency": "BRL" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barba com Toalha Quente" }, "price": "40.00", "priceCurrency": "BRL" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Combo Corte e Barba" }, "price": "80.00", "priceCurrency": "BRL" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design de Sobrancelha" }, "price": "20.00", "priceCurrency": "BRL" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pigmentação" }, "price": "60.00", "priceCurrency": "BRL" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pigmentação de Barba ou Cabelo" }, "price": "60.00", "priceCurrency": "BRL" }
       ]
     }
   }
@@ -77,21 +77,17 @@
 </head>
 <body>
   <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-  <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
 
-  <!-- 1. HEADER -->
+  <!-- HEADER TRANSPARENTE NO TOPO -> CARVÃO SÓLIDO AO ROLAR -->
   <header id="siteHeader" class="site-header">
     <div class="container header-inner">
       <a href="#inicio" class="brand-wordmark" aria-label="Barbearia Old Town - Início">
-        <span class="brand-small">Barbearia</span>
         <span class="brand-name">OLD TOWN</span>
       </a>
 
-      <div class="header-status-wrap">
-        <div id="shopStatusPill" class="status-pill" aria-live="polite">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span id="shopStatusText">Terça a sábado · 9h às 20h</span>
-        </div>
+      <div id="shopStatusPill" class="status-pill" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="shopStatusText">Terça a sábado · 9h às 20h</span>
       </div>
 
       <nav class="header-nav" aria-label="Navegação principal">
@@ -102,8 +98,13 @@
         <a href="#localizacao">Localização</a>
       </nav>
 
-      <a href="#agendamento" class="btn btn-primary btn-magnetic header-cta-desktop">
-        Agendar horário
+      <a
+        href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary header-cta-desktop"
+      >
+        <span>Agendar horário</span>
       </a>
 
       <button
@@ -114,31 +115,28 @@
         aria-expanded="false"
         aria-controls="mobileDrawer"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-          <line x1="3" y1="7" x2="21" y2="7"></line>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="17" x2="21" y2="17"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
     </div>
   </header>
 
-  <!-- Menu Mobile em Tela Cheia -->
+  <!-- MENU MOBILE TELA CHEIA -->
   <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu principal">
     <div class="mobile-drawer-head">
-      <div class="brand-wordmark">
-        <span class="brand-small">Barbearia</span>
-        <span class="brand-name">OLD TOWN</span>
-      </div>
+      <span class="brand-name">OLD TOWN</span>
       <button id="menuCloseBtn" type="button" class="menu-toggle" aria-label="Fechar menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
 
-    <nav class="mobile-drawer-links" aria-label="Menu móvel">
+    <nav class="mobile-drawer-links" aria-label="Navegação mobile">
       <a href="#servicos" class="mobile-drawer-link" data-mobile-close>Serviços</a>
       <a href="#equipe" class="mobile-drawer-link" data-mobile-close>Equipe</a>
       <a href="#galeria" class="mobile-drawer-link" data-mobile-close>Estrutura</a>
@@ -147,507 +145,572 @@
     </nav>
 
     <div class="mobile-drawer-foot">
-      <p class="mono-label" style="color: var(--cor-texto-suave);">Rua Tuiuti, 55 · Tatuapé · Terça a sábado, 9h às 20h</p>
-      <a href="#agendamento" class="btn btn-primary" data-mobile-close style="width: 100%;">
-        Agendar horário
+      <p class="drawer-address">Rua Tuiuti, 55 · Tatuapé · Terça a sábado, 9h às 20h</p>
+      <a
+        href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-full"
+        data-mobile-close
+      >
+        <span>Agendar horário no WhatsApp</span>
+      </a>
+      <a
+        href="https://instagram.com/barbeariaoldtown"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-secondary btn-full"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>Conheça também nosso Instagram</span>
       </a>
     </div>
   </div>
 
   <main id="conteudo">
-    <!-- 2. HERO -->
+    <!-- 1. TELA INICIAL -->
     <section id="inicio" class="hero">
-      <div class="hero-media" aria-hidden="true">
-        <img
-          src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/recepcao-deqQwKVq.jpg"
-          data-fallback="imagens/recepcao.jpg"
-          alt="Recepção clássica da Barbearia Old Town na Rua Tuiuti, Tatuapé"
-          width="1600"
-          height="900"
-          loading="eager"
-          fetchpriority="high"
-          referrerpolicy="no-referrer"
-          class="hero-bg-img"
-        />
+      <div class="hero-media" data-fallback-container>
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/recepcao-mobile.jpg" />
+          <img
+            src="images/recepcao.jpg"
+            alt="Interior clássico da Barbearia Old Town na Rua Tuiuti, Tatuapé"
+            width="1376"
+            height="768"
+            fetchpriority="high"
+            decoding="async"
+            class="hero-bg-img"
+            data-fallback-label="Barbearia Old Town · Tatuapé"
+          />
+        </picture>
+        <div class="img-fallback-block" hidden aria-hidden="true">
+          <span class="img-fallback-title">Barbearia Old Town</span>
+        </div>
       </div>
 
-      <div class="container hero-inner">
-        <div class="hero-top-meta">
-          <span class="hero-address-tag">Rua Tuiuti, 55 · Tatuapé · SP</span>
+      <div class="container hero-inner hero-enter">
+        <p class="hero-kicker">Rua Tuiuti, 55 · Tatuapé · SP</p>
 
-          <div class="rotating-stamp" aria-hidden="true">
-            <svg viewBox="0 0 120 120">
-              <defs>
-                <path id="stampCircle" d="M 60, 60 m -44, 0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
-              </defs>
-              <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(239,230,214,0.28)" stroke-width="1" />
-              <circle cx="60" cy="60" r="28" fill="none" stroke="#B8693D" stroke-width="1" />
-              <text>
-                <textPath href="#stampCircle" startOffset="0%">
-                  Tatuapé · São Paulo · Terça a Sábado ·
-                </textPath>
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <h1 class="hero-title" data-split>
-          <span class="split-line-mask"><span class="split-line-inner">Corte na <em class="title-accent">tesoura.</em></span></span>
-          <span class="split-line-mask"><span class="split-line-inner">Barba na toalha quente.</span></span>
+        <h1 class="hero-title">
+          Corte na tesoura. Barba na <span class="title-copper">toalha quente.</span>
         </h1>
 
         <p class="hero-subtitle">
           Barbearia tradicional no Tatuapé, a 400 m do metrô. Terça a sábado, com horário marcado e chopp por nossa conta.
         </p>
 
+        <ul class="hero-chips" aria-label="Destaques da casa">
+          <li>Cortes Clássicos</li>
+          <li>Navalha e toalha quente</li>
+          <li>Chopp Gelado (cortesia em cada visita)</li>
+          <li>Tatuapé, SP</li>
+        </ul>
+
         <div class="hero-actions">
-          <a href="#agendamento" class="btn btn-primary btn-magnetic">
-            Agendar horário
-          </a>
           <a
-            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Old%20Town."
+            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
+            class="btn btn-primary hero-cta-main"
           >
-            WhatsApp direto
+            <span>Agendar horário</span>
+          </a>
+          <a
+            href="https://instagram.com/barbeariaoldtown"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary hero-cta-insta"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <span>Conheça também nosso Instagram</span>
           </a>
         </div>
 
-        <div class="hero-rating-bar" aria-label="Avaliação dos clientes: 4.9 de 5.0 com mais de 1.200 avaliações">
-          <div class="rating-score">
-            <span class="rating-big">4.9</span>
-            <span class="rating-max">de 5.0</span>
-          </div>
+        <div class="hero-rating-wrap">
+          <div class="barber-stripe" aria-hidden="true"></div>
+          <div class="hero-rating-bar" aria-label="Avaliação 4.9 de 5.0 com mais de 1.200 avaliações de clientes">
+            <div class="rating-score">
+              <span class="rating-big">4.9</span>
+              <span class="rating-max">de 5.0</span>
+            </div>
 
-          <div class="rating-stars" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
+            <div class="rating-stars" aria-hidden="true">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
 
-          <div class="rating-count-wrap">
-            <span class="rating-count-num">+<span id="reviewsCounter" data-target="1200">1.200</span> avaliações</span>
-            <span class="rating-count-sub">Nota dos frequentadores da Tuiuti</span>
+            <div class="rating-count-wrap">
+              <span class="rating-count-num">+1.200 avaliações de clientes</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- 3. MARQUEE GIGANTE EM CONTORNO -->
-    <div class="marquee-band" aria-hidden="true">
-      <div id="marqueeTrack" class="marquee-track">
-        <span class="marquee-item">CORTE · BARBA · TOALHA QUENTE · NAVALHA · CHOPP ·</span>
-        <span class="marquee-item">CORTE · BARBA · TOALHA QUENTE · NAVALHA · CHOPP ·</span>
-        <span class="marquee-item">CORTE · BARBA · TOALHA QUENTE · NAVALHA · CHOPP ·</span>
-        <span class="marquee-item">CORTE · BARBA · TOALHA QUENTE · NAVALHA · CHOPP ·</span>
-      </div>
-    </div>
 
     <div class="barber-stripe" aria-hidden="true"></div>
 
-    <!-- 4. SERVIÇOS E PREÇOS — CARDÁPIO EM FUNDO PAPEL -->
+    <!-- 2. SERVIÇOS E PREÇOS (PAPEL) — CARROSSEL COM DESTAQUE CENTRAL -->
     <section id="servicos" class="surface-paper section-pad">
-      <div class="container">
+      <div class="container reveal">
         <header class="section-head">
           <div>
-            <p class="mono-label" style="color: var(--cor-cobre-tinta); margin-bottom: 10px;">Tabela fixa da casa</p>
-            <h2 class="display-title" data-split>
-              <span class="split-line-mask"><span class="split-line-inner">Serviços e <em class="title-accent">preços</em></span></span>
+            <p class="section-kicker">Tabela da casa</p>
+            <h2 class="display-title">
+              Serviços e <span class="title-copper">preços</span>
             </h2>
           </div>
           <p class="section-head-lead">
-            Valor fechado na parede, sem surpresa na saída. Clique no serviço para ir direto para a agenda com ele selecionado.
+            Valor fechado sem surpresa no balcão. Escolha o serviço e marque direto no WhatsApp.
           </p>
         </header>
+      </div>
 
-        <ul class="menu-list">
-          <li class="menu-row">
-            <div class="menu-row-main">
-              <div class="menu-row-title-wrap">
-                <h3 class="menu-row-title">Corte Tradicional</h3>
-              </div>
-              <p class="menu-row-desc">Lavagem com shampoo mentolado, tesoura ou máquina e finalização com pomada matte.</p>
+      <div
+        class="cc-carousel"
+        data-carousel="servicos"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Carrossel de serviços e preços"
+      >
+        <div class="cc-track" tabindex="0">
+          <article class="cc-slide ticket-card is-active" tabindex="0">
+            <div class="ticket-card-top">
+              <span class="ticket-meta-tag">40 min</span>
+              <h3 class="ticket-card-title">Corte Tradicional</h3>
             </div>
-            <span class="menu-leader" aria-hidden="true"></span>
-            <div class="menu-row-meta">
-              <div class="menu-price-block">
-                <span class="menu-price">R$ 50</span>
-                <span class="menu-duration">40 min</span>
+            <p class="ticket-card-desc">
+              Lavagem com shampoo mentolado, corte na tesoura ou máquina e finalização com pomada matte.
+            </p>
+            <div class="ticket-card-foot">
+              <div class="ticket-price-wrap">
+                <span class="ticket-price">R$ 50</span>
+                <span class="ticket-duration">40 min</span>
               </div>
-              <button type="button" class="btn btn-outline-dark menu-book-btn" data-pick-service="corte">
-                Agendar
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20Corte%20Tradicional%20(R$%2050)%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar</span>
+              </a>
             </div>
-          </li>
+          </article>
 
-          <li class="menu-row">
-            <div class="menu-row-main">
-              <div class="menu-row-title-wrap">
-                <h3 class="menu-row-title">Barba com Toalha Quente</h3>
-              </div>
-              <p class="menu-row-desc">Óleo pré-barba, vapor na toalha aromatizada, navalha afiada e loção pós-barba.</p>
+          <article class="cc-slide ticket-card" tabindex="0">
+            <div class="ticket-card-top">
+              <span class="ticket-meta-tag">35 min</span>
+              <h3 class="ticket-card-title">Barba com Toalha Quente</h3>
             </div>
-            <span class="menu-leader" aria-hidden="true"></span>
-            <div class="menu-row-meta">
-              <div class="menu-price-block">
-                <span class="menu-price">R$ 40</span>
-                <span class="menu-duration">35 min</span>
+            <p class="ticket-card-desc">
+              Óleo pré-barba, vapor na toalha aromatizada, navalha afiada e loção calmante pós-barba.
+            </p>
+            <div class="ticket-card-foot">
+              <div class="ticket-price-wrap">
+                <span class="ticket-price">R$ 40</span>
+                <span class="ticket-duration">35 min</span>
               </div>
-              <button type="button" class="btn btn-outline-dark menu-book-btn" data-pick-service="barba">
-                Agendar
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Barba%20com%20Toalha%20Quente%20(R$%2040)%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar</span>
+              </a>
             </div>
-          </li>
+          </article>
 
-          <li class="menu-row">
-            <div class="menu-row-main">
-              <div class="menu-row-title-wrap">
-                <h3 class="menu-row-title">Combo Corte e Barba</h3>
-                <span class="menu-combo-tag">Economia de R$ 10</span>
-              </div>
-              <p class="menu-row-desc">Corte completo na tesoura ou máquina somado à barboterapia com toalha quente e navalha.</p>
+          <article class="cc-slide ticket-card ticket-card-featured" tabindex="0">
+            <div class="ticket-card-top">
+              <span class="ticket-badge">Economia de R$ 10</span>
+              <h3 class="ticket-card-title">Combo Corte e Barba</h3>
             </div>
-            <span class="menu-leader" aria-hidden="true"></span>
-            <div class="menu-row-meta">
-              <div class="menu-price-block">
-                <span class="menu-price">R$ 80</span>
-                <span class="menu-duration">75 min</span>
+            <p class="ticket-card-desc">
+              Corte completo na tesoura ou máquina somado à barboterapia com toalha quente e navalha.
+            </p>
+            <div class="ticket-card-foot">
+              <div class="ticket-price-wrap">
+                <span class="ticket-price">R$ 80</span>
+                <span class="ticket-duration">75 min</span>
               </div>
-              <button type="button" class="btn btn-outline-dark menu-book-btn" data-pick-service="combo">
-                Agendar
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20o%20Combo%20Corte%20e%20Barba%20(R$%2080)%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar</span>
+              </a>
             </div>
-          </li>
+          </article>
 
-          <li class="menu-row">
-            <div class="menu-row-main">
-              <div class="menu-row-title-wrap">
-                <h3 class="menu-row-title">Design de Sobrancelha</h3>
-              </div>
-              <p class="menu-row-desc">Acerto limpo na navalha e pinça, respeitando o desenho natural do rosto.</p>
+          <article class="cc-slide ticket-card" tabindex="0">
+            <div class="ticket-card-top">
+              <span class="ticket-meta-tag">15 min</span>
+              <h3 class="ticket-card-title">Design de Sobrancelha</h3>
             </div>
-            <span class="menu-leader" aria-hidden="true"></span>
-            <div class="menu-row-meta">
-              <div class="menu-price-block">
-                <span class="menu-price">R$ 20</span>
-                <span class="menu-duration">15 min</span>
+            <p class="ticket-card-desc">
+              Acerto limpo na navalha e pinça, respeitando o desenho natural do rosto.
+            </p>
+            <div class="ticket-card-foot">
+              <div class="ticket-price-wrap">
+                <span class="ticket-price">R$ 20</span>
+                <span class="ticket-duration">15 min</span>
               </div>
-              <button type="button" class="btn btn-outline-dark menu-book-btn" data-pick-service="sobrancelha">
-                Agendar
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Design%20de%20Sobrancelha%20(R$%2020)%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar</span>
+              </a>
             </div>
-          </li>
+          </article>
 
-          <li class="menu-row">
-            <div class="menu-row-main">
-              <div class="menu-row-title-wrap">
-                <h3 class="menu-row-title">Pigmentação</h3>
-              </div>
-              <p class="menu-row-desc">Camuflagem discreta de fios brancos ou acerto de falhas na barba e no cabelo.</p>
+          <article class="cc-slide ticket-card" tabindex="0">
+            <div class="ticket-card-top">
+              <span class="ticket-meta-tag">30 min</span>
+              <h3 class="ticket-card-title">Pigmentação de Barba ou Cabelo</h3>
             </div>
-            <span class="menu-leader" aria-hidden="true"></span>
-            <div class="menu-row-meta">
-              <div class="menu-price-block">
-                <span class="menu-price">R$ 60</span>
-                <span class="menu-duration">30 min</span>
+            <p class="ticket-card-desc">
+              Camuflagem discreta de fios brancos ou acerto de falhas com resultado natural.
+            </p>
+            <div class="ticket-card-foot">
+              <div class="ticket-price-wrap">
+                <span class="ticket-price">R$ 60</span>
+                <span class="ticket-duration">30 min</span>
               </div>
-              <button type="button" class="btn btn-outline-dark menu-book-btn" data-pick-service="pigmentacao">
-                Agendar
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20Pigmenta%C3%A7%C3%A3o%20de%20Barba%20ou%20Cabelo%20(R$%2060)%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar</span>
+              </a>
             </div>
-          </li>
-        </ul>
-
-        <div class="menu-payments">
-          <span>PAGAMENTO NO BALCÃO: CARTÃO DE CRÉDITO · DÉBITO · PIX · DINHEIRO</span>
-          <a
-            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="text-decoration: underline; text-underline-offset: 4px;"
-          >
-            Dúvidas no WhatsApp
-          </a>
+          </article>
         </div>
+
+        <div class="container cc-controls">
+          <div class="cc-dots" aria-label="Selecionar serviço"></div>
+          <div class="cc-actions">
+            <button type="button" class="cc-arrow cc-prev" aria-label="Serviço anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="cc-arrow cc-next" aria-label="Próximo serviço">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="payments-line">Pagamento: cartão de crédito, débito, Pix ou dinheiro.</p>
       </div>
     </section>
 
-    <!-- 5. EQUIPE -->
+    <!-- 3. EQUIPE (CARVÃO) — CARROSSEL NO MOBILE / 3 LADO A LADO NO DESKTOP -->
     <section id="equipe" class="surface-dark section-pad">
-      <div class="container">
+      <div class="container reveal">
         <header class="section-head">
           <div>
-            <p class="mono-label" style="color: var(--cor-cobre); margin-bottom: 10px;">Três cadeiras na casa</p>
-            <h2 class="display-title" data-split>
-              <span class="split-line-mask"><span class="split-line-inner">Quem pega na <em class="title-accent">navalha</em></span></span>
+            <p class="section-kicker">Três cadeiras na casa</p>
+            <h2 class="display-title">
+              Quem pega na <span class="title-copper">navalha</span>
             </h2>
           </div>
           <p class="section-head-lead">
-            Cada barbeiro tem sua mão e seu ritmo. Escolha quem atende melhor o corte ou a barba que você usa.
+            Cada barbeiro tem sua mão e seu ritmo. Escolha quem combina com o corte ou a barba que você usa.
           </p>
         </header>
+      </div>
 
-        <div class="team-track">
-          <article class="barber-card">
+      <div
+        class="cc-carousel cc-carousel-desktop-grid"
+        data-carousel="equipe"
+        data-desktop-grid="3"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Equipe de barbeiros"
+      >
+        <div class="cc-track" tabindex="0">
+          <article class="cc-slide barber-card is-active" tabindex="0">
             <div class="barber-monogram-frame" data-chair="CADEIRA 01">
               <span class="barber-monogram-text" aria-hidden="true">MS</span>
             </div>
             <div class="barber-body">
-              <span class="barber-specialty">Cortes Clássicos</span>
+              <span class="barber-specialty">Especialista em Cortes Clássicos</span>
               <h3 class="barber-name">Marco Silveira</h3>
               <p class="barber-bio">
-                Mais de 10 anos de experiência em cortes tradicionais na tesoura, pompadour, slicked back e acabamento refinado com navalhete suíço.
+                Mais de 10 anos na tesoura, pompadour, slicked back e acabamento limpo no navalhete.
               </p>
-              <button type="button" class="btn btn-secondary barber-cta" data-pick-barber="Marco Silveira">
-                Agendar com Marco
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20o%20Marco%20Silveira%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full barber-cta"
+              >
+                <span>Agendar com Marco</span>
+              </a>
             </div>
           </article>
 
-          <article class="barber-card">
+          <article class="cc-slide barber-card" tabindex="0">
             <div class="barber-monogram-frame" data-chair="CADEIRA 02">
               <span class="barber-monogram-text" aria-hidden="true">RC</span>
             </div>
             <div class="barber-body">
-              <span class="barber-specialty">Barboterapia</span>
+              <span class="barber-specialty">Especialista em Barboterapia</span>
               <h3 class="barber-name">Rodrigo Costa</h3>
               <p class="barber-bio">
-                Especialista no ritual completo de toalha quente aromática, alinhamento simétrico da barba e tratamentos para crescimento e saúde dos fios.
+                Ritual de toalha quente aromática, desenho simétrico e cuidado com a saúde dos fios.
               </p>
-              <button type="button" class="btn btn-secondary barber-cta" data-pick-barber="Rodrigo Costa">
-                Agendar com Rodrigo
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20o%20Rodrigo%20Costa%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full barber-cta"
+              >
+                <span>Agendar com Rodrigo</span>
+              </a>
             </div>
           </article>
 
-          <article class="barber-card">
+          <article class="cc-slide barber-card" tabindex="0">
             <div class="barber-monogram-frame" data-chair="CADEIRA 03">
               <span class="barber-monogram-text" aria-hidden="true">LA</span>
             </div>
             <div class="barber-body">
-              <span class="barber-specialty">Fade e Pigmentação</span>
+              <span class="barber-specialty">Especialista em Fade e Pigmentação</span>
               <h3 class="barber-name">Lucas Albuquerque</h3>
               <p class="barber-bio">
-                Referência em degradês precisos (skin fade, taper), visagismo contemporâneo e aplicação natural de pigmentação capilar e facial.
+                Degradês precisos (skin fade e taper), visagismo atual e pigmentação discreta.
               </p>
-              <button type="button" class="btn btn-secondary barber-cta" data-pick-barber="Lucas Albuquerque">
-                Agendar com Lucas
-              </button>
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20o%20Lucas%20Albuquerque%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full barber-cta"
+              >
+                <span>Agendar com Lucas</span>
+              </a>
             </div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- 6. ESTRUTURA (GALERIA PINNED NO DESKTOP / SWIPE NO MOBILE) -->
-    <section id="galeria" class="surface-graphite gallery-section section-pad">
-      <div id="galleryPin">
-        <div class="container">
-          <div class="gallery-head-row">
-            <div>
-              <p class="mono-label" style="color: var(--cor-cobre); margin-bottom: 8px;">Rua Tuiuti, 55</p>
-              <h2 class="display-title" data-split>
-                <span class="split-line-mask"><span class="split-line-inner">Estrutura da <em class="title-accent">casa</em></span></span>
-              </h2>
-            </div>
-            <div class="gallery-counter" aria-label="Foto atual da galeria">
-              <span id="galleryCurrent">01</span> / 06
-            </div>
-          </div>
-        </div>
-
-        <div id="galleryViewport" class="gallery-viewport">
-          <div id="galleryTrack" class="gallery-track">
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/recepcao-deqQwKVq.jpg"
-                  data-fallback="imagens/recepcao.jpg"
-                  alt="Recepção e fachada interna da Barbearia Old Town no Tatuapé"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">01</span>
-                  <span class="gallery-title">Recepção</span>
-                </div>
-                <p class="gallery-desc">Chegada na Rua Tuiuti, com balcão em madeira maciça e café passado na hora.</p>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/cadeiras-DfYgASaq.jpg"
-                  data-fallback="imagens/cadeiras.jpg"
-                  alt="Cadeiras de barbeiro em couro preto com espelhos redondos na Barbearia Old Town"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">02</span>
-                  <span class="gallery-title">Área de corte</span>
-                </div>
-                <p class="gallery-desc">Poltronas hidráulicas em couro com distância confortável entre cada estação.</p>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/ferramentas-DdJKZTsn.jpg"
-                  data-fallback="imagens/ferramentas.jpg"
-                  alt="Tesouras, navalha e pincel de barbear dispostos sobre bancada de madeira"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">03</span>
-                  <span class="gallery-title">Ferramentas</span>
-                </div>
-                <p class="gallery-desc">Tesouras japonesas e alemãs, pentes de carbono e lâmina descartada a cada cliente.</p>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/balcao-Cj8j-b3t.jpg"
-                  data-fallback="imagens/balcao.jpg"
-                  alt="Balcão de madeira com espelhos e linha de produtos para cabelo e barba"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">04</span>
-                  <span class="gallery-title">Balcão e produtos</span>
-                </div>
-                <p class="gallery-desc">Prateleira com pomadas matte, óleos para barba, pós-barba e cera modeladora.</p>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/lounge-BcesjjsB.jpg"
-                  data-fallback="imagens/lounge.jpg"
-                  alt="Lounge de espera com sofá de couro marrom e mesa em nogueira"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">05</span>
-                  <span class="gallery-title">Lounge de espera</span>
-                </div>
-                <p class="gallery-desc">Sofá de couro para chegar cedo sem pressa e pegar o chopp cortesia da casa.</p>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-slide">
-              <div class="gallery-img-frame">
-                <img
-                  src="https://barbearia-old-town.orizonstudio-ltda.workers.dev/assets/lavatorio-BzrtmwHw.jpg"
-                  data-fallback="imagens/lavatorio.jpg"
-                  alt="Lavatório com cubas escuras e torneiras em cobre da Barbearia Old Town"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  class="gallery-img"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <div class="gallery-caption-top">
-                  <span class="gallery-idx">06</span>
-                  <span class="gallery-title">Lavatório</span>
-                </div>
-                <p class="gallery-desc">Cubas fundas, shampoo mentolado e toalhas quentes saindo da estufa.</p>
-              </figcaption>
-            </figure>
+        <div class="container cc-controls">
+          <div class="cc-dots" aria-label="Selecionar barbeiro"></div>
+          <div class="cc-actions">
+            <button type="button" class="cc-arrow cc-prev" aria-label="Barbeiro anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="cc-arrow cc-next" aria-label="Próximo barbeiro">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. CLUBE DE ASSINATURA (CARVÃO) -->
-    <section id="clube" class="surface-dark section-pad">
-      <div class="container">
+    <!-- 4. ESTRUTURA (GRAFITE) — CARROSSEL COM DESTAQUE CENTRAL -->
+    <section id="galeria" class="surface-graphite section-pad">
+      <div class="container reveal">
         <header class="section-head">
           <div>
-            <p class="mono-label" style="color: var(--cor-cobre); margin-bottom: 10px;">Mensalidade sem fidelidade</p>
-            <h2 class="display-title" data-split>
-              <span class="split-line-mask"><span class="split-line-inner">Clube de <em class="title-accent">assinatura</em></span></span>
+            <p class="section-kicker">Rua Tuiuti, 55</p>
+            <h2 class="display-title">
+              Estrutura da <span class="title-copper">casa</span>
+            </h2>
+          </div>
+          <div class="gallery-focus-status" aria-live="polite">
+            <span class="gallery-counter"><strong id="galleryCurrent">01</strong> / 05</span>
+            <span id="galleryFocusTitle" class="gallery-focus-title">Área de corte</span>
+          </div>
+        </header>
+      </div>
+
+      <div
+        class="cc-carousel"
+        data-carousel="estrutura"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Carrossel da estrutura da barbearia"
+      >
+        <div class="cc-track" tabindex="0">
+          <figure class="cc-slide gallery-slide is-active" data-slide-title="Área de corte" tabindex="0">
+            <div class="gallery-img-frame" data-fallback-container>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/cadeiras-mobile.jpg" />
+                <img
+                  src="images/cadeiras.jpg"
+                  alt="Cadeiras de barbeiro em couro preto com espelhos na Barbearia Old Town"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  class="gallery-img"
+                />
+              </picture>
+              <div class="img-fallback-block" hidden aria-hidden="true">
+                <span class="img-fallback-title">Área de corte</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Área de corte</span>
+              <p class="gallery-desc">Poltronas hidráulicas em couro com bom espaço entre cada estação.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="cc-slide gallery-slide" data-slide-title="Ferramentas" tabindex="0">
+            <div class="gallery-img-frame" data-fallback-container>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/ferramentas-mobile.jpg" />
+                <img
+                  src="images/ferramentas.jpg"
+                  alt="Tesouras, navalha e pincel de barbear dispostos sobre bancada de madeira"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  class="gallery-img"
+                />
+              </picture>
+              <div class="img-fallback-block" hidden aria-hidden="true">
+                <span class="img-fallback-title">Ferramentas</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Ferramentas</span>
+              <p class="gallery-desc">Tesouras japonesas, pentes de carbono e lâmina trocada a cada cliente.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="cc-slide gallery-slide" data-slide-title="Balcão e produtos" tabindex="0">
+            <div class="gallery-img-frame" data-fallback-container>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/balcao-mobile.jpg" />
+                <img
+                  src="images/balcao.jpg"
+                  alt="Balcão em madeira escura com linha de pomadas e óleos para barba"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  class="gallery-img"
+                />
+              </picture>
+              <div class="img-fallback-block" hidden aria-hidden="true">
+                <span class="img-fallback-title">Balcão e produtos</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Balcão e produtos</span>
+              <p class="gallery-desc">Pomadas matte, óleos para barba, pós-barba e cera modeladora.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="cc-slide gallery-slide" data-slide-title="Lounge de espera" tabindex="0">
+            <div class="gallery-img-frame" data-fallback-container>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/lounge-mobile.jpg" />
+                <img
+                  src="images/lounge.jpg"
+                  alt="Lounge de espera com sofá de couro marrom e mesa em nogueira"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  class="gallery-img"
+                />
+              </picture>
+              <div class="img-fallback-block" hidden aria-hidden="true">
+                <span class="img-fallback-title">Lounge de espera</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Lounge de espera</span>
+              <p class="gallery-desc">Sofá de couro para chegar sem pressa e pegar o chopp cortesia da casa.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="cc-slide gallery-slide" data-slide-title="Lavatório" tabindex="0">
+            <div class="gallery-img-frame" data-fallback-container>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/lavatorio-mobile.jpg" />
+                <img
+                  src="images/lavatorio.jpg"
+                  alt="Lavatório com cubas escuras e torneiras em cobre"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  class="gallery-img"
+                />
+              </picture>
+              <div class="img-fallback-block" hidden aria-hidden="true">
+                <span class="img-fallback-title">Lavatório</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">Lavatório</span>
+              <p class="gallery-desc">Cubas fundas, shampoo mentolado e toalhas quentes na temperatura certa.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="container cc-controls">
+          <div class="cc-dots" aria-label="Selecionar foto"></div>
+          <div class="cc-actions">
+            <button type="button" class="cc-arrow cc-prev" aria-label="Foto anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="cc-arrow cc-next" aria-label="Próxima foto">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container social-strip">
+        <p class="social-strip-text">Quer ver cortes, degradês e o dia a dia das cadeiras antes de vir?</p>
+        <a
+          href="https://instagram.com/barbeariaoldtown"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>Conheça também nosso Instagram</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. CLUBE DE ASSINATURA (CARVÃO) — SEM CARROSSEL (2 CARDS LADO A LADO / EMPILHADOS) -->
+    <section id="clube" class="surface-dark section-pad">
+      <div class="container reveal">
+        <header class="section-head">
+          <div>
+            <p class="section-kicker">Mensalidade sem fidelidade</p>
+            <h2 class="display-title">
+              Clube de <span class="title-copper">assinatura</span>
             </h2>
           </div>
           <p class="section-head-lead">
-            Para quem passa na cadeira toda semana ou a cada quinze dias e prefere pagar um valor fixo no mês.
+            Para quem passa na cadeira toda semana ou a cada quinze dias com valor fixo no mês.
           </p>
         </header>
 
         <div class="club-grid">
-          <!-- Plano 1: Contorno fino sobre grafite -->
-          <article class="plan-card plan-old-school">
-            <div>
-              <span class="plan-kicker">Plano Mensal · Cabelo</span>
-              <h3 class="plan-name">Old School</h3>
-
-              <div class="plan-price-row">
-                <span class="plan-price-value">R$ 119</span>
-                <span class="plan-price-period">/ mês</span>
-              </div>
-
-              <ul class="plan-list">
-                <li><span class="plan-dash" aria-hidden="true">—</span><span><strong>Cortes de cabelo ilimitados</strong> no mês</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Lavagem com shampoo mentolado inclusa</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>10% de desconto em pomadas e ceras</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Chopp artesanal cortesia por atendimento</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Sem taxa de adesão ou fidelidade</span></li>
-              </ul>
-            </div>
-
-            <a
-              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20assinar%20o%20Plano%20Old%20School%20(R$%20119/m%C3%AAs)."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-              style="width: 100%;"
-            >
-              Assinar Old School
-            </a>
-          </article>
-
-          <!-- Plano 2: Maior, cobre sólido com texto carvão -->
           <article class="plan-card plan-vip">
             <div>
-              <span class="plan-kicker">Plano Mensal · Cabelo + Barba</span>
+              <span class="plan-kicker">Plano Mensal · Cabelo e Barba</span>
               <h3 class="plan-name">Gentleman VIP</h3>
 
               <div class="plan-price-row">
@@ -656,165 +719,208 @@
               </div>
 
               <ul class="plan-list">
-                <li><span class="plan-dash" aria-hidden="true">—</span><span><strong>Cortes de cabelo ilimitados</strong> no mês</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span><strong>Barboterapia com toalha quente ilimitada</strong></span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Design de sobrancelha mensal gratuito</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Prioridade na escolha de horários da agenda</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>20% de desconto em cosméticos da loja</span></li>
-                <li><span class="plan-dash" aria-hidden="true">—</span><span>Chopp artesanal por atendimento</span></li>
+                <li>Cortes ilimitados no mês</li>
+                <li>Barboterapia com toalha quente ilimitada</li>
+                <li>Design de sobrancelha mensal gratuito</li>
+                <li>Prioridade na agenda</li>
+                <li>20% de desconto em cosméticos</li>
+                <li>Chopp artesanal por atendimento</li>
               </ul>
             </div>
 
             <a
-              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20assinar%20o%20Plano%20Gentleman%20VIP%20(R$%20189/m%C3%AAs)."
+              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20assinar%20o%20Plano%20Gentleman%20VIP%20(R$%20189/m%C3%AAs)%20na%20Barbearia%20Old%20Town."
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-dark btn-magnetic"
-              style="width: 100%;"
+              class="btn btn-dark btn-full"
             >
-              Assinar Gentleman VIP
+              <span>Assinar Gentleman VIP</span>
+            </a>
+          </article>
+
+          <article class="plan-card plan-old-school">
+            <div>
+              <span class="plan-kicker">Plano Mensal · Cabelo</span>
+              <h3 class="plan-name">Plano Old School</h3>
+
+              <div class="plan-price-row">
+                <span class="plan-price-value">R$ 119</span>
+                <span class="plan-price-period">/ mês</span>
+              </div>
+
+              <ul class="plan-list">
+                <li>Cortes ilimitados no mês</li>
+                <li>Lavagem com shampoo mentolado</li>
+                <li>10% de desconto em pomadas e ceras</li>
+                <li>Chopp artesanal cortesia por atendimento</li>
+                <li>Sem taxa de adesão ou fidelidade</li>
+              </ul>
+            </div>
+
+            <a
+              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20assinar%20o%20Plano%20Old%20School%20(R$%20119/m%C3%AAs)%20na%20Barbearia%20Old%20Town."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary btn-full"
+            >
+              <span>Assinar Old School</span>
             </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 8. COMO FUNCIONA — INGRESSOS (TICKET STUBS) EM OFF-WHITE -->
+    <div class="barber-stripe" aria-hidden="true"></div>
+
+    <!-- 6. COMO FUNCIONA (OFF-WHITE) -->
     <section id="como-funciona" class="surface-offwhite section-pad">
-      <div class="container">
+      <div class="container reveal">
         <header class="section-head">
           <div>
-            <p class="mono-label" style="color: var(--cor-cobre-tinta); margin-bottom: 10px;">Sem aplicativo nem cadastro</p>
-            <h2 class="display-title" data-split>
-              <span class="split-line-mask"><span class="split-line-inner">Como funciona o <em class="title-accent">horário</em></span></span>
+            <p class="section-kicker">Direto no WhatsApp</p>
+            <h2 class="display-title">
+              Como funciona o <span class="title-copper">horário</span>
             </h2>
           </div>
           <p class="section-head-lead">
-            Três passos diretos para marcar sua cadeira sem perder tempo no telefone.
+            Três passos diretos para garantir sua cadeira sem aplicativo nem cadastro.
           </p>
         </header>
 
-        <div class="steps-stage">
-          <svg class="steps-connector-svg" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true">
-            <line id="stepsConnectorPath" x1="0" y1="2" x2="1000" y2="2" stroke="#15171A" stroke-width="2" stroke-dasharray="8 8" />
-          </svg>
+        <ol class="steps-row">
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <h3 class="step-title">Escolha o Serviço</h3>
+              <p class="step-desc">Veja aqui no site o serviço ou o barbeiro que combina com o que você procura.</p>
+            </div>
+          </li>
 
-          <ol class="steps-grid">
-            <li class="ticket-stub">
-              <div class="ticket-top">
-                <span class="ticket-numeral">1</span>
-                <span class="ticket-code">ETAPA 01 · SERVIÇO</span>
-              </div>
-              <h3 class="ticket-title">Escolha o Serviço</h3>
-              <p class="ticket-desc">
-                Selecione corte, barba com toalha quente ou combo e aponte seu barbeiro de preferência.
-              </p>
-            </li>
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <h3 class="step-title">Defina o Horário</h3>
+              <p class="step-desc">Combine o melhor dia e horário de terça a sábado, entre 9h e 20h, direto na conversa.</p>
+            </div>
+          </li>
 
-            <li class="ticket-stub">
-              <div class="ticket-top">
-                <span class="ticket-numeral">2</span>
-                <span class="ticket-code">ETAPA 02 · AGENDA</span>
-              </div>
-              <h3 class="ticket-title">Defina o Horário</h3>
-              <p class="ticket-desc">
-                Marque o dia e a janela disponível de terça a sábado, entre 9h e 20h, sem fila de espera.
-              </p>
-            </li>
-
-            <li class="ticket-stub">
-              <div class="ticket-top">
-                <span class="ticket-numeral">3</span>
-                <span class="ticket-code">ETAPA 03 · CONFIRMAÇÃO</span>
-              </div>
-              <h3 class="ticket-title">Confirme no WhatsApp</h3>
-              <p class="ticket-desc">
-                O pedido já sai preenchido em um clique e a recepção confirma sua cadeira na hora.
-              </p>
-            </li>
-          </ol>
-        </div>
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <h3 class="step-title">Confirme no WhatsApp</h3>
+              <p class="step-desc">Ao tocar em agendar, você já fala com a recepção para confirmar sua cadeira na hora.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- 9. LOCALIZAÇÃO E AGENDAMENTO -->
+    <!-- 7. LOCALIZAÇÃO, CONTATO E GOOGLE MAPS SEMPRE VISÍVEL (CARVÃO) -->
     <section id="localizacao" class="surface-dark section-pad">
-      <div class="container">
+      <div class="container reveal">
         <header class="section-head">
           <div>
-            <p class="mono-label" style="color: var(--cor-cobre); margin-bottom: 10px;">Tatuapé · São Paulo</p>
-            <h2 class="display-title" data-split>
-              <span class="split-line-mask"><span class="split-line-inner">Localização e <em class="title-accent">agendamento</em></span></span>
+            <p class="section-kicker">Tatuapé · São Paulo</p>
+            <h2 class="display-title">
+              Localização e <span class="title-copper">contato</span>
             </h2>
           </div>
           <p class="section-head-lead">
-            Rua Tuiuti, 55, a 400 m da estação Tatuapé do Metrô. Reserve abaixo em menos de um minuto.
+            Rua Tuiuti, 55, a 400 m da estação Tatuapé do Metrô e próximo ao Shopping Metrô Tatuapé.
           </p>
         </header>
 
-        <div class="booking-layout">
-          <!-- Coluna 1: Ficha + Mapa -->
-          <div>
-            <div class="ficha-card">
-              <div class="ficha-header">
-                <h3 class="ficha-title">Ficha da Casa</h3>
-                <span class="mono-label" style="color: var(--cor-cobre);">Tatuapé</span>
-              </div>
+        <div class="location-layout">
+          <!-- Coluna 1: Ficha da Casa + Botões WhatsApp e Instagram -->
+          <div class="ficha-card">
+            <div class="ficha-header">
+              <h3 class="ficha-title">Ficha da Casa</h3>
+              <span class="ficha-tag">Tatuapé</span>
+            </div>
 
-              <div class="ficha-row">
-                <span class="ficha-key">Endereço</span>
-                <div class="ficha-val">
-                  <strong>Rua Tuiuti, 55 · Tatuapé, São Paulo - SP</strong>
-                  <p class="ficha-note">A 400 m da estação Tatuapé do Metrô</p>
-                </div>
-              </div>
-
-              <div class="ficha-row">
-                <span class="ficha-key">Horários</span>
-                <div class="ficha-val">
-                  <table id="hoursTable" class="hours-table" aria-label="Horários de funcionamento">
-                    <tbody>
-                      <tr data-day="1"><td>Segunda-feira</td><td>Fechado</td></tr>
-                      <tr data-day="2"><td>Terça-feira</td><td>09h às 20h</td></tr>
-                      <tr data-day="3"><td>Quarta-feira</td><td>09h às 20h</td></tr>
-                      <tr data-day="4"><td>Quinta-feira</td><td>09h às 20h</td></tr>
-                      <tr data-day="5"><td>Sexta-feira</td><td>09h às 20h</td></tr>
-                      <tr data-day="6"><td>Sábado</td><td>09h às 20h</td></tr>
-                      <tr data-day="0"><td>Domingo</td><td>Fechado</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="ficha-row">
-                <span class="ficha-key">Contato</span>
-                <div class="ficha-val">
-                  <p>
-                    WhatsApp:
-                    <a
-                      href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style="color: var(--cor-cobre); font-family: var(--font-mono);"
-                    >
-                      (11) 99999-8888
-                    </a>
-                  </p>
-                  <p style="margin-top: 4px;">
-                    Instagram:
-                    <a
-                      href="https://instagram.com/barbeariaoldtown"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style="font-family: var(--font-mono); text-decoration: underline; text-underline-offset: 3px;"
-                    >
-                      @barbeariaoldtown
-                    </a>
-                  </p>
-                </div>
+            <div class="ficha-row">
+              <span class="ficha-key">Endereço</span>
+              <div class="ficha-val">
+                <strong>Rua Tuiuti, 55 · Tatuapé, São Paulo - SP</strong>
+                <p class="ficha-sub">CEP 03081-000</p>
+                <p class="ficha-note">A 400 m da estação Tatuapé do Metrô e próximo ao Shopping Metrô Tatuapé.</p>
               </div>
             </div>
 
+            <div class="ficha-row">
+              <span class="ficha-key">Horários</span>
+              <div class="ficha-val">
+                <table id="hoursTable" class="hours-table" aria-label="Horários de funcionamento">
+                  <tbody>
+                    <tr data-day="1"><td>Segunda-feira</td><td>Fechado</td></tr>
+                    <tr data-day="2"><td>Terça-feira</td><td>9h às 20h</td></tr>
+                    <tr data-day="3"><td>Quarta-feira</td><td>9h às 20h</td></tr>
+                    <tr data-day="4"><td>Quinta-feira</td><td>9h às 20h</td></tr>
+                    <tr data-day="5"><td>Sexta-feira</td><td>9h às 20h</td></tr>
+                    <tr data-day="6"><td>Sábado</td><td>9h às 20h</td></tr>
+                    <tr data-day="0"><td>Domingo</td><td>Fechado</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="ficha-row">
+              <span class="ficha-key">Contato</span>
+              <div class="ficha-val">
+                <p>
+                  WhatsApp:
+                  <a
+                    href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="ficha-link-copper"
+                  >
+                    (11) 99999-8888
+                  </a>
+                </p>
+                <p class="ficha-insta-line">
+                  Instagram:
+                  <a
+                    href="https://instagram.com/barbeariaoldtown"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="ficha-link-under"
+                  >
+                    @barbeariaoldtown
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="ficha-cta-stack">
+              <a
+                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-full"
+              >
+                <span>Agendar pelo WhatsApp</span>
+              </a>
+              <a
+                href="https://instagram.com/barbeariaoldtown"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-full"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span>Conheça também nosso Instagram</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Mapa do Google Maps sempre visível -->
+          <div class="map-card">
+            <div class="map-card-head">
+              <div>
+                <span class="map-pin-label">Onde estamos no Tatuapé</span>
+                <h3 class="map-card-title">Rua Tuiuti, 55 · Veja as ruas ao redor</h3>
+              </div>
+            </div>
             <div class="map-box">
               <iframe
                 title="Mapa da Barbearia Old Town na Rua Tuiuti, 55, Tatuapé"
@@ -822,157 +928,34 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
-              <div class="map-footer">
-                <span class="mono-label" style="color: var(--cor-texto-suave);">Rua Tuiuti, 55 · CEP 03081-000</span>
-                <a
-                  href="https://maps.google.com/?q=Rua+Tuiuti+55+Tatuape+Sao+Paulo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                  style="min-height: 40px; padding: 8px 14px; font-size: 0.85rem;"
-                >
-                  Abrir no Google Maps
-                </a>
-              </div>
             </div>
-          </div>
-
-          <!-- Coluna 2: Formulário Inteligente -->
-          <div id="agendamento" class="booking-card">
-            <div class="booking-card-head">
-              <h3 class="booking-card-title">Reserve sua cadeira</h3>
-              <p class="booking-card-sub">
-                Selecione barbeiro, serviço, data e horário. O resumo segue montado para o WhatsApp da recepção.
-              </p>
+            <div class="map-loaded-bar">
+              <span>Rua Tuiuti, 55 · CEP 03081-000</span>
+              <a
+                href="https://maps.google.com/?q=Rua+Tuiuti+55+Tatuape+Sao+Paulo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary map-open-btn"
+              >
+                <span>Abrir no Google Maps</span>
+              </a>
             </div>
-
-            <form id="bookingForm" novalidate>
-              <!-- Barbeiro em chips -->
-              <div class="form-block">
-                <span class="field-label" id="labelBarber">1. Barbeiro</span>
-                <div id="barberChips" class="chips-grid" role="radiogroup" aria-labelledby="labelBarber">
-                  <button type="button" class="chip-btn is-selected" role="radio" aria-checked="true" data-barber="Sem preferência (primeiro disponível)">
-                    <span class="chip-monogram" aria-hidden="true">SP</span>
-                    <span>Sem preferência</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-barber="Marco Silveira">
-                    <span class="chip-monogram" aria-hidden="true">MS</span>
-                    <span>Marco Silveira</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-barber="Rodrigo Costa">
-                    <span class="chip-monogram" aria-hidden="true">RC</span>
-                    <span>Rodrigo Costa</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-barber="Lucas Albuquerque">
-                    <span class="chip-monogram" aria-hidden="true">LA</span>
-                    <span>Lucas Albuquerque</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Serviço em chips -->
-              <div class="form-block">
-                <span class="field-label" id="labelService">2. Serviço</span>
-                <div id="serviceChips" class="chips-grid" role="radiogroup" aria-labelledby="labelService">
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-service="corte">
-                    <span>Corte Tradicional</span>
-                    <span class="chip-price">R$ 50</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-service="barba">
-                    <span>Barba Toalha Quente</span>
-                    <span class="chip-price">R$ 40</span>
-                  </button>
-                  <button type="button" class="chip-btn is-selected" role="radio" aria-checked="true" data-service="combo">
-                    <span>Combo Corte + Barba</span>
-                    <span class="chip-price">R$ 80</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-service="sobrancelha">
-                    <span>Sobrancelha</span>
-                    <span class="chip-price">R$ 20</span>
-                  </button>
-                  <button type="button" class="chip-btn" role="radio" aria-checked="false" data-service="pigmentacao">
-                    <span>Pigmentação</span>
-                    <span class="chip-price">R$ 60</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Data -->
-              <div class="form-block">
-                <label for="bookingDate" class="field-label">3. Data (terça a sábado)</label>
-                <input type="date" id="bookingDate" name="date" class="text-input" required />
-                <span id="dateMsg" class="field-msg">Atendemos de terça a sábado, das 09h às 20h.</span>
-              </div>
-
-              <!-- Horários em chips clicáveis -->
-              <div class="form-block">
-                <span class="field-label" id="labelTime">4. Horário</span>
-                <div id="timeSlotsGrid" class="slots-grid" role="radiogroup" aria-labelledby="labelTime"></div>
-                <span id="timeMsg" class="field-msg"></span>
-              </div>
-
-              <!-- Nome e WhatsApp -->
-              <div class="form-block fields-two">
-                <div>
-                  <label for="clientName" class="field-label">Seu nome *</label>
-                  <input type="text" id="clientName" name="name" placeholder="Ex.: Carlos Eduardo" class="text-input" autocomplete="name" required />
-                  <span id="nameMsg" class="field-msg"></span>
-                </div>
-                <div>
-                  <label for="clientPhone" class="field-label">Seu WhatsApp *</label>
-                  <input type="tel" id="clientPhone" name="phone" placeholder="(11) 99999-9999" maxlength="15" class="text-input" autocomplete="tel" required />
-                  <span id="phoneMsg" class="field-msg"></span>
-                </div>
-              </div>
-
-              <!-- Observações -->
-              <div class="form-block">
-                <label for="clientNotes" class="field-label">Observações (opcional)</label>
-                <input type="text" id="clientNotes" name="notes" placeholder="Ex.: degradê baixo na lateral ou barba mais curta" class="text-input" />
-              </div>
-
-              <!-- Valor Estimado -->
-              <div class="estimate-bar">
-                <span class="mono-label" style="color: var(--cor-papel);">Valor estimado</span>
-                <span id="estimateValue" class="estimate-val">R$ 80</span>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-magnetic" style="width: 100%;">
-                Enviar agendamento via WhatsApp
-              </button>
-
-              <div id="bookingConfirmation" class="booking-confirmation" hidden role="status" aria-live="polite">
-                <p class="mono-label" style="color: var(--cor-cobre);">Pedido pronto para envio</p>
-                <p id="confirmationSummary" style="font-size: 0.94rem; color: var(--cor-offwhite);"></p>
-                <a id="confirmationWaLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
-                  Abrir conversa no WhatsApp (11) 99999-8888
-                </a>
-              </div>
-            </form>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 10. RODAPÉ -->
+  <!-- 8. RODAPÉ COMPACTO -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-wordmark" aria-hidden="true">OLD TOWN</div>
-      <div class="barber-stripe" aria-hidden="true"></div>
 
       <div class="footer-grid">
         <div>
           <p class="footer-heading">Barbearia Old Town</p>
-          <p style="max-width: 38ch; margin-bottom: 12px;">
-            Corte na tesoura, barba na toalha quente e chopp gelado por nossa conta na Rua Tuiuti.
-          </p>
-          <p style="font-family: var(--font-mono); font-size: 0.84rem; color: var(--cor-offwhite);">
-            Rua Tuiuti, 55 · Tatuapé, São Paulo - SP
-          </p>
-          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cor-cobre); margin-top: 4px;">
-            A 400 m da estação Tatuapé do Metrô
-          </p>
+          <p class="footer-addr">Rua Tuiuti, 55 · Tatuapé, São Paulo - SP · CEP 03081-000</p>
+          <p class="footer-metro">A 400 m da estação Tatuapé do Metrô e próximo ao Shopping Metrô Tatuapé.</p>
         </div>
 
         <div>
@@ -983,21 +966,20 @@
             <li><a href="#galeria">Estrutura</a></li>
             <li><a href="#clube">Clube de Assinatura</a></li>
             <li><a href="#como-funciona">Como Funciona</a></li>
-            <li><a href="#agendamento">Agendamento</a></li>
+            <li><a href="#localizacao">Localização e Mapa</a></li>
           </ul>
         </div>
 
         <div>
           <p class="footer-heading">Atendimento</p>
-          <p style="color: var(--cor-offwhite); font-weight: 500;">Terça a sábado, 9h às 20h</p>
-          <p style="margin-bottom: 12px;">Domingo e segunda: fechado</p>
-          <p>
-            <a href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer" style="color: var(--cor-cobre); font-family: var(--font-mono);">
+          <p class="footer-hours">Terça a sábado, 9h às 20h · Domingo e segunda fechado</p>
+          <p class="footer-contact-line">
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town." target="_blank" rel="noopener noreferrer" class="footer-link-copper">
               WhatsApp: (11) 99999-8888
             </a>
           </p>
-          <p style="margin-top: 6px;">
-            <a href="https://instagram.com/barbeariaoldtown" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono);">
+          <p class="footer-contact-line">
+            <a href="https://instagram.com/barbeariaoldtown" target="_blank" rel="noopener noreferrer">
               Instagram: @barbeariaoldtown
             </a>
           </p>
@@ -1005,20 +987,29 @@
       </div>
 
       <div class="footer-legal">
+        <span>© 2026 Barbearia Old Town</span>
         <span>Beba com moderação. Proibido para menores de 18 anos.</span>
-        <span>Site demonstrativo. Dados e imagens fictícios.</span>
+        <span class="footer-demo-note">Site demonstrativo. Dados e imagens fictícios.</span>
       </div>
     </div>
+    <div class="barber-stripe" aria-hidden="true"></div>
   </footer>
 
-  <!-- 11. BARRA FIXA MOBILE & BOTÃO FLUTUANTE DESKTOP -->
+  <!-- 9. BARRA FIXA MOBILE (Agendar direto no WhatsApp + Ícone WhatsApp Redondo Pulsante) -->
   <div id="mobileStickyBar" class="mobile-sticky-bar">
-    <a href="#agendamento" class="btn btn-primary">Agendar horário</a>
     <a
-      href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio."
+      href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
       target="_blank"
       rel="noopener noreferrer"
-      class="mobile-sticky-wa"
+      class="btn btn-primary"
+    >
+      <span>Agendar horário</span>
+    </a>
+    <a
+      href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-sticky-wa wa-pulse"
       aria-label="Falar no WhatsApp"
     >
       <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1027,11 +1018,12 @@
     </a>
   </div>
 
+  <!-- BOTÃO FLUTUANTE DESKTOP (Redondo + Pulsar) -->
   <a
-    href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio."
+    href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Old%20Town."
     target="_blank"
     rel="noopener noreferrer"
-    class="desktop-wa-fab"
+    class="desktop-wa-fab wa-pulse"
     aria-label="Abrir conversa no WhatsApp da Barbearia Old Town"
   >
     <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1039,10 +1031,6 @@
     </svg>
   </a>
 
-  <!-- GSAP + ScrollTrigger + Lenis via CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
