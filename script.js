@@ -7,7 +7,8 @@
   'use strict';
 
   const AUTO_INTERVAL_MS = 4000;
-  const RESUME_AFTER_INTERACTION_MS = 6000;
+  const DRAG_THRESHOLD_PX = 6;
+  const FLICK_BIAS_PX = 36;
   const DESKTOP_GRID_BREAKPOINT = '(min-width: 1024px)';
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -129,11 +130,13 @@
   }
 
   // ========================================================================
-  // 3. CARROSSEL COM DESTAQUE CENTRAL
-  //    - Sem botão de pause manual
-  //    - Avança a cada 4s somente quando visível na tela
-  //    - Ao sair da viewport, pausa mantendo o slide atual; ao voltar, retoma 4s dele
-  //    - Em desktop (>= 1024px), carrosséis com data-desktop-grid="3" ficam lado a lado
+  // 3. CARROSSEL INTERATIVO COM DESTAQUE CENTRAL
+  //    - Cronômetro de 4s passando página por página enquanto visível na tela
+  //    - Ao sair do carrossel: pausa preservando o slide atual
+  //    - Ao voltar ao carrossel: começa a contar 4s novamente desse slide
+  //    - Desktop: clique vai para o card/lado, segurar + arrastar move o carrossel
+  //    - Mobile: arraste fluido no dedo + toque em cards laterais
+  //    - Em desktop (>= 1024px), data-desktop-grid="3" exibe 3 colunas lado a lado
   // ========================================================================
   function initCenterCarousels() {
     const carousels = document.querySelectorAll('[data-carousel]');
@@ -155,9 +158,15 @@
 
       let activeIdx = Math.max(0, Math.min(slides.length - 1, initialIdx));
       let autoInterval = null;
-      let resumeTimeout = null;
-      let isHoverOrFocus = false;
+      let scrollSettleTimer = null;
       let isInViewport = false;
+      let isDraggingMouse = false;
+      let isTouching = false;
+      let dragStartX = 0;
+      let dragStartScrollLeft = 0;
+      let dragMaxDelta = 0;
+      let suppressNextClick = false;
+      let ignoreScrollSyncUntil = 0;
       let dots = [];
 
       const isGridMode = () => hasDesktopGrid && desktopGridMQ.matches;
@@ -172,7 +181,7 @@
           dot.setAttribute('aria-current', idx === activeIdx ? 'true' : 'false');
           dot.addEventListener('click', () => {
             goToSlide(idx, true);
-            pauseTemporarily();
+            startAuto();
           });
           dotsWrap.appendChild(dot);
           return dot;
@@ -205,11 +214,29 @@
         syncGalleryHeader(activeIdx);
       }
 
+      function getClosestSlideIdx() {
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        let closestIdx = activeIdx;
+        let minDistance = Infinity;
+
+        slides.forEach((slide, idx) => {
+          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          const dist = Math.abs(slideCenter - trackCenter);
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestIdx = idx;
+          }
+        });
+
+        return closestIdx;
+      }
+
       function scrollTrackToSlide(idx, smooth) {
         if (isGridMode()) return;
         const slide = slides[idx];
         if (!slide) return;
         const targetLeft = slide.offsetLeft + slide.offsetWidth / 2 - track.clientWidth / 2;
+        ignoreScrollSyncUntil = Date.now() + (smooth && !prefersReducedMotion ? 650 : 120);
         track.scrollTo({
           left: Math.max(0, targetLeft),
           behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto',
@@ -228,35 +255,6 @@
         scrollTrackToSlide(activeIdx, false);
       });
 
-      if ('IntersectionObserver' in window) {
-        const slideObserver = new IntersectionObserver(
-          (entries) => {
-            if (isGridMode()) return;
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const idx = slides.indexOf(entry.target);
-                if (idx !== -1) {
-                  setActiveSlide(idx);
-                }
-              }
-            });
-          },
-          {
-            root: track,
-            rootMargin: '0px -40% 0px -40%',
-            threshold: 0.05,
-          }
-        );
-        slides.forEach((slide) => slideObserver.observe(slide));
-      }
-
-      function clearPendingResume() {
-        if (resumeTimeout) {
-          clearTimeout(resumeTimeout);
-          resumeTimeout = null;
-        }
-      }
-
       function stopAuto() {
         if (autoInterval) {
           clearInterval(autoInterval);
@@ -266,11 +264,11 @@
 
       function startAuto() {
         stopAuto();
-        clearPendingResume();
         if (
           isGridMode() ||
           prefersReducedMotion ||
-          isHoverOrFocus ||
+          isDraggingMouse ||
+          isTouching ||
           !isInViewport ||
           document.hidden
         ) {
@@ -281,51 +279,190 @@
         }, AUTO_INTERVAL_MS);
       }
 
-      function pauseTemporarily() {
-        stopAuto();
-        clearPendingResume();
-        if (!prefersReducedMotion && !isGridMode() && isInViewport && !document.hidden) {
-          resumeTimeout = setTimeout(() => {
+      // Sincroniza o slide ativo quando o usuário rola manualmente (touch ou trackpad)
+      track.addEventListener(
+        'scroll',
+        () => {
+          if (isGridMode()) return;
+          if (isDraggingMouse) {
+            setActiveSlide(getClosestSlideIdx());
+            return;
+          }
+          if (Date.now() < ignoreScrollSyncUntil) return;
+
+          if (scrollSettleTimer) clearTimeout(scrollSettleTimer);
+          scrollSettleTimer = setTimeout(() => {
+            if (isDraggingMouse || isTouching || isGridMode()) return;
+            const closest = getClosestSlideIdx();
+            if (closest !== activeIdx) {
+              setActiveSlide(closest);
+              startAuto();
+            }
+          }, 90);
+        },
+        { passive: true }
+      );
+
+      // Mobile / Touch: pausa durante o toque e reinicia contagem de 4s ao soltar
+      track.addEventListener(
+        'touchstart',
+        () => {
+          if (isGridMode()) return;
+          isTouching = true;
+          stopAuto();
+        },
+        { passive: true }
+      );
+
+      track.addEventListener(
+        'touchend',
+        () => {
+          if (isGridMode()) return;
+          isTouching = false;
+          if (scrollSettleTimer) clearTimeout(scrollSettleTimer);
+          scrollSettleTimer = setTimeout(() => {
+            const closest = getClosestSlideIdx();
+            setActiveSlide(closest);
             startAuto();
-          }, RESUME_AFTER_INTERACTION_MS);
+          }, 160);
+        },
+        { passive: true }
+      );
+
+      track.addEventListener(
+        'touchcancel',
+        () => {
+          isTouching = false;
+          startAuto();
+        },
+        { passive: true }
+      );
+
+      // Evita arraste fantasma nativo de imagens/links durante o clique-e-arraste com o mouse
+      track.addEventListener('dragstart', (e) => {
+        if (!isGridMode()) {
+          e.preventDefault();
+        }
+      });
+
+      // Mouse Desktop: segurar e arrastar para o lado
+      track.addEventListener('mousedown', (e) => {
+        if (isGridMode() || e.button !== 0) return;
+        isDraggingMouse = true;
+        dragStartX = e.clientX;
+        dragStartScrollLeft = track.scrollLeft;
+        dragMaxDelta = 0;
+        suppressNextClick = false;
+        stopAuto();
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDraggingMouse) return;
+        const deltaX = e.clientX - dragStartX;
+        dragMaxDelta = Math.max(dragMaxDelta, Math.abs(deltaX));
+
+        if (dragMaxDelta > DRAG_THRESHOLD_PX) {
+          if (!track.classList.contains('is-dragging')) {
+            track.classList.add('is-dragging');
+          }
+          track.scrollLeft = dragStartScrollLeft - deltaX;
+        }
+      });
+
+      function finishMouseDrag(e) {
+        if (!isDraggingMouse) return;
+        const movedPastThreshold = dragMaxDelta > DRAG_THRESHOLD_PX;
+        const finalDeltaX = e && typeof e.clientX === 'number' ? e.clientX - dragStartX : 0;
+
+        isDraggingMouse = false;
+        track.classList.remove('is-dragging');
+
+        if (movedPastThreshold) {
+          suppressNextClick = true;
+          setTimeout(() => {
+            suppressNextClick = false;
+          }, 80);
+
+          let targetIdx = getClosestSlideIdx();
+          if (targetIdx === activeIdx && Math.abs(finalDeltaX) >= FLICK_BIAS_PX) {
+            targetIdx = finalDeltaX < 0
+              ? Math.min(slides.length - 1, activeIdx + 1)
+              : Math.max(0, activeIdx - 1);
+          }
+
+          goToSlide(targetIdx, true);
+          startAuto();
+        } else {
+          startAuto();
         }
       }
 
-      track.addEventListener('touchstart', pauseTemporarily, { passive: true });
-      track.addEventListener('pointerdown', pauseTemporarily, { passive: true });
-      track.addEventListener('wheel', pauseTemporarily, { passive: true });
+      window.addEventListener('mouseup', finishMouseDrag);
+      window.addEventListener('blur', finishMouseDrag);
 
-      carousel.addEventListener('mouseenter', () => {
-        isHoverOrFocus = true;
-        stopAuto();
-        clearPendingResume();
-      });
-      carousel.addEventListener('mouseleave', () => {
-        isHoverOrFocus = false;
-        startAuto();
-      });
-      carousel.addEventListener('focusin', () => {
-        isHoverOrFocus = true;
-        stopAuto();
-        clearPendingResume();
-      });
-      carousel.addEventListener('focusout', (e) => {
-        if (!carousel.contains(e.relatedTarget)) {
-          isHoverOrFocus = false;
-          pauseTemporarily();
+      // Clique com o mouse:
+      // - Se veio de um arraste, cancela o clique acidental em links/botões
+      // - Se clicou em um card lateral, centraliza esse card
+      // - Se clicou no card ativo (fora de um botão/link como "Agendar"), vai para o card ao lado
+      track.addEventListener('click', (e) => {
+        if (isGridMode()) return;
+
+        if (suppressNextClick) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
+        const clickedSlide = e.target.closest('.cc-slide');
+        const clickedInteractive = e.target.closest('a, button');
+
+        if (clickedSlide) {
+          const idx = slides.indexOf(clickedSlide);
+          if (idx === -1) return;
+
+          if (idx !== activeIdx) {
+            e.preventDefault();
+            goToSlide(idx, true);
+            startAuto();
+            return;
+          }
+
+          // Card central ativo: mantém links/botões ("Agendar") funcionando normalmente
+          if (clickedInteractive) {
+            return;
+          }
+
+          // Clique em qualquer área do card ativo avança para o lado
+          const rect = track.getBoundingClientRect();
+          const clickRatio = (e.clientX - rect.left) / rect.width;
+          if (clickRatio < 0.3 && activeIdx > 0) {
+            goToSlide(activeIdx - 1, true);
+          } else {
+            goToSlide(activeIdx + 1, true);
+          }
+          startAuto();
+          return;
+        }
+
+        // Clique no espaço vazio da trilha
+        if (!clickedInteractive) {
+          const rect = track.getBoundingClientRect();
+          const isLeftHalf = e.clientX < rect.left + rect.width / 2;
+          goToSlide(isLeftHalf ? activeIdx - 1 : activeIdx + 1, true);
+          startAuto();
         }
       });
 
       if (prevBtn) {
         prevBtn.addEventListener('click', () => {
           goToSlide(activeIdx - 1, true);
-          pauseTemporarily();
+          startAuto();
         });
       }
       if (nextBtn) {
         nextBtn.addEventListener('click', () => {
           goToSlide(activeIdx + 1, true);
-          pauseTemporarily();
+          startAuto();
         });
       }
 
@@ -334,27 +471,28 @@
         if (e.key === 'ArrowRight') {
           e.preventDefault();
           goToSlide(activeIdx + 1, true);
-          pauseTemporarily();
+          startAuto();
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
           goToSlide(activeIdx - 1, true);
-          pauseTemporarily();
+          startAuto();
         } else if (e.key === 'Home') {
           e.preventDefault();
           goToSlide(0, true);
-          pauseTemporarily();
+          startAuto();
         } else if (e.key === 'End') {
           e.preventDefault();
           goToSlide(slides.length - 1, true);
-          pauseTemporarily();
+          startAuto();
         }
       });
 
       if (hasDesktopGrid) {
         const handleBreakpointChange = () => {
           if (isGridMode()) {
+            isDraggingMouse = false;
+            track.classList.remove('is-dragging');
             stopAuto();
-            clearPendingResume();
           } else {
             requestAnimationFrame(() => {
               scrollTrackToSlide(activeIdx, false);
@@ -376,7 +514,6 @@
                 startAuto();
               } else {
                 stopAuto();
-                clearPendingResume();
               }
             });
           },
@@ -391,7 +528,6 @@
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           stopAuto();
-          clearPendingResume();
         } else {
           startAuto();
         }
